@@ -51,12 +51,21 @@ public extension QRCode.FillStyle {
 
 		/// Create a color from rgb float values
 		@objc public convenience init(_ red: CGFloat, _ green: CGFloat, _ blue: CGFloat, alpha: CGFloat = 1.0) {
-			self.init(CGColor(red: red, green: green, blue: blue, alpha: alpha))
+            if #available(iOS 13.0, *) {
+                self.init(CGColor(red: red, green: green, blue: blue, alpha: alpha))
+            } else {
+                self.init(UIColor(red: red, green: green, blue: blue, alpha: alpha).cgColor)
+            }
 		}
 
 		/// Create a color from gray values
 		@objc public convenience init(gray: CGFloat, alpha: CGFloat = 1.0) {
-			self.init(CGColor(gray: gray, alpha: alpha))
+            if #available(iOS 13.0, *) {
+                self.init(CGColor(gray: gray, alpha: alpha))
+            } else {
+                self.init(CGColor.gray(value: gray, alpha: alpha))
+                // Fallback on earlier versions
+            }
 		}
 
 		/// Returns a new copy of the fill style

@@ -37,7 +37,7 @@ public extension QRCode {
 		}
 
 		/// The style for the data component for the QR code. Defaults to black
-		@objc public var onPixels: QRCodeFillStyleGenerator = QRCode.FillStyle.Solid(CGColor(gray: 0.0, alpha: 1.0))
+        @objc public var onPixels: QRCodeFillStyleGenerator = QRCode.FillStyle.Solid(CGColor.gray(value: 0, alpha: 1))
 
 		/// The background color for the 'on' pixels
 		@objc public var onPixelsBackground: CGColor?
@@ -54,7 +54,7 @@ public extension QRCode {
 		@objc public var pupil: QRCodeFillStyleGenerator?
 
 		/// The background style for the QR code. If nil, no background is drawn. Defaults to white
-		@objc public var background: QRCodeFillStyleGenerator? = QRCode.FillStyle.Solid(CGColor(gray: 1.0, alpha: 1.0))
+        @objc public var background: QRCodeFillStyleGenerator? = QRCode.FillStyle.Solid(CGColor.gray(value: 1, alpha: 1))
 
 		/// A corner radius (in qr pixels) to apply to the background fill
 		@objc public var backgroundFractionalCornerRadius: CGFloat = 0

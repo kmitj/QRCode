@@ -6,7 +6,7 @@ let package = Package(
 	name: "QRCode",
 	platforms: [
 		.macOS(.v10_13),
-		.iOS(.v13),
+		.iOS(.v11),
 		.tvOS(.v13),
 		.watchOS(.v6)
 	],
@@ -36,7 +36,7 @@ let package = Package(
 		// A microframework for cleaning handling image conversion
 		.package(
 			url: "https://github.com/dagronf/SwiftImageReadWrite",
-			.upToNextMinor(from: "1.4.1")
+			.upToNextMinor(from: "1.6.1")
 		),
 	],
 	targets: [
